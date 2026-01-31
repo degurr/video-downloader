@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Downloader</title>
+  <style>
+    body {
+      width: 220px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #mp4 {
+      background: #3b82f6;
+      color: white;
+    }
+
+    #mp3 {
+      background: #22c55e;
+      color: white;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Downloader</h3>
+  <button id="mp4">MP4 다운로드</button>
+  <button id="mp3">MP3 다운로드</button>
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

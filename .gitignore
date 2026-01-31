@@ -1,0 +1,20 @@
+# Node
+node_modules/
+
+# Env
+.env
+.env.*
+
+# Downloads
+downloads/
+*.mp4
+*.mp3
+*.srt
+*.mkv
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,47 @@
+#pd-box {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 230px;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 999999;
+}
+
+.pd-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#pd-box button {
+    width: 100%;
+    margin: 6px 0;
+    padding: 7px;
+    border: none;
+    border-radius: 6px;
+    background: #ff0000;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#pd-box button:hover {
+    background: #cc0000;
+}
+
+.subs {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+#status {
+    margin-top: 8px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.85;
+}
