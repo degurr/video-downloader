@@ -13,10 +13,14 @@ function isYouTube(url) {
 app.post("/download", (req, res) => {
     let { url, type, subs } = req.body;
 
-    // 유튜브 아니면 자막 강제 비활성화
+    // 유튜브 아니면 자막 비활성화
     if (!isYouTube(url)) subs = false;
 
-    const args = [url, "-o", "downloads/%(title)s.%(ext)s"];
+    const args = [
+        "--js-runtimes", "node",
+        "-o", "downloads/%(title)s.%(ext)s",
+        url
+    ];
 
     if (type === "mp4") {
         args.unshift("-f", "bv*+ba/b");
@@ -27,7 +31,6 @@ app.post("/download", (req, res) => {
             "ffmpeg:-c:v copy -c:a aac -b:a 192k"
         );
     }
-
 
     if (type === "mp3") {
         args.push("-x", "--audio-format", "mp3", "--audio-quality", "0");
@@ -42,14 +45,14 @@ app.post("/download", (req, res) => {
         );
     }
 
-
     const ytdlp = spawn("yt-dlp", args);
 
     ytdlp.on("close", () => {
         res.json({ success: true });
     });
 
-    ytdlp.on("error", () => {
+    ytdlp.on("error", (err) => {
+        console.error(err);
         res.json({ success: false });
     });
 });
